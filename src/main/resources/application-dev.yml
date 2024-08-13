@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    name: dev
+    url: jdbc:mysql://175.27.166.44:8306/alpha
+    username: root
+    password: wonderland
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+  type-aliases-package: com.clawchat.alpha.entity
+
+
+
