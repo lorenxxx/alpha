@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: alpha
+
+server:
+  port: 8080
+  servlet:
+    contextPath: /alpha
