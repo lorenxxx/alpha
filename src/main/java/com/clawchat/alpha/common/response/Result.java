@@ -15,12 +15,14 @@ public class Result<T> {
 
     private T data;
 
-    public static <T> Result success(String msg, T data) {
-        return new Result(0, null, data);
+    @SuppressWarnings ("rawtypes")
+    public static <T> Result success(T data) {
+        return new Result<>(0, "ok", data);
     }
 
+    @SuppressWarnings ("rawtypes")
     public static Result fail(Integer code, String msg) {
-        return new Result(code, msg, null);
+        return new Result<>(code, msg, null);
     }
 
 }

@@ -11,3 +11,21 @@ server:
   port: 8080
   servlet:
     contextPath: /alpha
+
+# Swagger http://server:port/context-path/swagger-ui.html
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+swagger:
+  title: Alpha API
+  description: ClawChat Alpha Project
+  version: 1.0.0
+  author: Loren
+  url: https://www.clawchat.com/
+  email: lorenliang.pro@gmail.com
+

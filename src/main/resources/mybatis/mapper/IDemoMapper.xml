@@ -3,11 +3,27 @@
 
     <resultMap id="demoResultMap" type="com.clawchat.alpha.entity.Demo">
         <id column="id" property="id"/>
-        <result column="desc" property="desc"/>
+        <result column="comment" property="comment"/>
     </resultMap>
 
-    <select id="getByID" parameterType="java.lang.Integer" resultMap="demoResultMap">
-        select * from t_demo where id = #{id} limit 1;
+    <insert id="insert" parameterType="com.clawchat.alpha.entity.Demo" useGeneratedKeys="true" keyProperty="id">
+        insert into t_demo (comment) values (#{comment})
+    </insert>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from t_demo where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.clawchat.alpha.entity.Demo">
+        update t_demo set comment = #{comment} where id = #{id}
+    </update>
+
+    <select id="getById" resultMap="demoResultMap">
+        select * from t_demo where id = #{id}
+    </select>
+
+    <select id="queryByIds" resultMap="demoResultMap">
+        select * from t_demo where id in (#{ids})
     </select>
 
 </mapper>
