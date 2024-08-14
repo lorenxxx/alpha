@@ -7,7 +7,7 @@
     </resultMap>
 
     <insert id="insert" parameterType="com.clawchat.alpha.entity.Demo" useGeneratedKeys="true" keyProperty="id">
-        insert into t_demo (comment) values (#{comment})
+        insert into t_demo (name, age, phone) values (#{name}, #{age}, #{phone})
     </insert>
 
     <delete id="deleteById" parameterType="java.lang.Integer">
@@ -15,15 +15,15 @@
     </delete>
 
     <update id="update" parameterType="com.clawchat.alpha.entity.Demo">
-        update t_demo set comment = #{comment} where id = #{id}
+        update t_demo set name = #{name}, age = #{age}, phone = #{phone} where id = #{id}
     </update>
 
     <select id="getById" resultMap="demoResultMap">
-        select * from t_demo where id = #{id}
+        select * from t_demo where id = #{id} limit 1
     </select>
 
-    <select id="queryByIds" resultMap="demoResultMap">
-        select * from t_demo where id in (#{ids})
+    <select id="getByName" resultMap="demoResultMap">
+        select * from t_demo where name = #{name} limit 1
     </select>
 
 </mapper>

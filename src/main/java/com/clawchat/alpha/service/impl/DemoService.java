@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class DemoService implements IDemoService {
 
@@ -46,8 +44,8 @@ public class DemoService implements IDemoService {
     }
 
     @Override
-    public List<Demo> queryDemoByIds(List<Integer> ids) {
-        return List.of();
+    public Demo getDemoByName(String name) {
+        return demoMapper.getByName(name);
     }
 
 }

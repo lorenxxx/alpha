@@ -9,6 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 public class UpdateDemoDTO {
 
-    private String comment;
+    private Integer id;
+
+    private String name;
+
+    private Integer age;
+
+    private String phone;
 
 }

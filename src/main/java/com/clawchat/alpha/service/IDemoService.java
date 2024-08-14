@@ -2,8 +2,6 @@ package com.clawchat.alpha.service;
 
 import com.clawchat.alpha.entity.Demo;
 
-import java.util.List;
-
 public interface IDemoService {
 
     Integer createDemo(Demo demo);
@@ -14,5 +12,6 @@ public interface IDemoService {
 
     Demo getDemoById(Integer id);
 
-    List<Demo> queryDemoByIds(List<Integer> ids);
+    Demo getDemoByName(String name);
+
 }
